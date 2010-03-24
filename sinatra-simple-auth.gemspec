@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sinatra-simple-auth}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Vasily Polovnyov"]
@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/vast/sinatra-simple-auth}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{super simple auth extension for Sinatra}
   s.test_files = [
     "test/sinatra_simple_auth_test.rb",
@@ -40,16 +40,13 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<sinatra>, [">= 1.0.0"])
-      s.add_runtime_dependency(%q<rack>, [">= 0.9.1"])
       s.add_development_dependency(%q<rack-test>, [">= 0.3.0"])
     else
       s.add_dependency(%q<sinatra>, [">= 1.0.0"])
-      s.add_dependency(%q<rack>, [">= 0.9.1"])
       s.add_dependency(%q<rack-test>, [">= 0.3.0"])
     end
   else
     s.add_dependency(%q<sinatra>, [">= 1.0.0"])
-    s.add_dependency(%q<rack>, [">= 0.9.1"])
     s.add_dependency(%q<rack-test>, [">= 0.3.0"])
   end
 end

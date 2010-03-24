@@ -8,14 +8,13 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gemspec|
     gemspec.name = "sinatra-simple-auth"
-    gemspec.version = "0.1.0"
+    gemspec.version = "0.1.1"
     gemspec.summary = gemspec.description = "super simple auth extension for Sinatra"
     gemspec.email = "vasily@polovnyov.ru"
     gemspec.homepage = "http://github.com/vast/sinatra-simple-auth"
     gemspec.authors = ["Vasily Polovnyov"]
 
     gemspec.add_dependency 'sinatra', '>=1.0.0'
-    gemspec.add_dependency 'rack', '>=0.9.1'
 
     gemspec.add_development_dependency 'rack-test', '>=0.3.0'
 
