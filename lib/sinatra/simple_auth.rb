@@ -8,9 +8,9 @@ module Sinatra
       end
 
       def auth!(password)
-        if password == options.password
+        if password == settings.password
           session[:arni] = true
-          redirect_back_or_default(options.home)
+          redirect_back_or_default(settings.home)
         end
         redirect '/a'
       end
