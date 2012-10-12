@@ -1,2 +1,7 @@
 .idea/*
 pkg/*
+Gemfile.lock
+.rbenv-version
+.bundle
+*.gem
+.DS_Store
