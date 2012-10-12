@@ -13,26 +13,32 @@ class SinatraSimpleAuthTest < Test::Unit::TestCase
     Sinatra::Application
   end
 
-  def test_it_should_login_and_redirect
-    post '/a', {:password => app.password}
+  def test_it_should_login_and_redirect_home
+    post '/login', {:password => app.password}
     assert_redirect app.home
   end
 
-  def test_it_should_fail_login_and_redirect
-    post '/a', {:password => 'some fake data'}
-    assert_redirect '/a'
+  def test_it_should_fail_login_and_redirect_back_to_form
+    post '/login', {:password => 'some fake data'}
+    assert_redirect '/login'
   end
 
   def test_it_should_login_and_redirect_back
     get '/pvt'
-    assert_redirect '/a'
+    assert_redirect '/login'
     login!
     assert_redirect '/pvt'
   end
 
-  def test_it_should_logout
+  def test_it_should_logout_via_delete
     login!
-    delete '/a'
+    delete '/logout'
+    assert_redirect '/'
+  end
+
+  def test_it_should_logout_via_get
+    login!
+    get '/logout'
     assert_redirect '/'
   end
 
@@ -46,7 +52,7 @@ class SinatraSimpleAuthTest < Test::Unit::TestCase
 
   protected
   def login!
-    post '/a', {:password => app.password}
+    post '/login', {:password => app.password}
   end
 
   def assert_redirect(path)
