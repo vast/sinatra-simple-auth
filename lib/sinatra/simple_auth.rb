@@ -12,18 +12,18 @@ module Sinatra
           session[:arni] = true
           redirect_back_or_default(settings.home)
         end
-        redirect '/login'
+        redirect to('/login')
       end
 
       def logout!
         session.clear
-        redirect '/'
+        redirect to('/')
       end
 
       def protected!
         unless authorized?
           store_location
-          redirect '/login'
+          redirect to('/login')
         end
       end
 
@@ -36,7 +36,7 @@ module Sinatra
         if session[:return_to] && session[:return_to] !=~ /^\/login\/?$/
           redirect session.delete(:return_to)
         end
-        redirect default
+        redirect to(default)
       end
 
     end
