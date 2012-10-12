@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'sinatra'
-require 'lib/sinatra/simple_auth'
+require './lib/sinatra/simple_auth'
 
 
 set :password, 'hello'

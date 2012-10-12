@@ -1,7 +1,7 @@
 require 'sinatra_app'
 require 'test/unit'
 require 'rack/test'
-begin; require 'turn'; rescue LoadError; end
+begin; require 'turn/autorun'; rescue LoadError; end
 
 set :environment, :test
 enable :sessions
