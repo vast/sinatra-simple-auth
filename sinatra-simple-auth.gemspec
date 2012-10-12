@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Vasily Polovnyov"]
   s.email       = ["vasily@polovnyov.ru"]
-  s.homepage    = "http://vast.github.com/sinatra-simple-auth/"
+  s.homepage    = "http://github.com/vast/sinatra-simple-auth/"
   s.summary     = %q{super simple auth extension for Sinatra}
   s.description = %q[super simple auth extension for Sinatra]
 
@@ -16,5 +16,7 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
   
-  s.add_dependency('sinatra')
+  s.add_dependency('sinatra', '>=1.1.0')
+  s.add_development_dependency('rack-test')
+  s.add_development_dependency('turn')
 end
