@@ -51,6 +51,6 @@ class SinatraSimpleAuthTest < Test::Unit::TestCase
 
   def assert_redirect(path)
     assert last_response.redirect?
-    assert_equal last_response.headers['Location'], path
+    assert_equal path, last_response.headers['Location'].sub('http://example.org', '')
   end
 end
