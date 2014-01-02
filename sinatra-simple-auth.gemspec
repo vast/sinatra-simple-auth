@@ -3,11 +3,12 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "sinatra-simple-auth"
-  s.version     = '0.5'
+  s.version     = '0.5.1'
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Vasily Polovnyov"]
   s.email       = ["vasily@polovnyov.ru"]
   s.homepage    = "http://github.com/vast/sinatra-simple-auth/"
+  s.license     = 'MIT'
   s.summary     = %q{super simple auth extension for Sinatra}
   s.description = %q[super simple auth extension for Sinatra]
 
